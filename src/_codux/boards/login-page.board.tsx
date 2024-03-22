@@ -1,7 +1,7 @@
 import { createBoard } from '@wixc3/react-board';
 import LoginPage_board_module from './login-page.board.module.scss';
 import Classnames from 'classnames';
-import { Form, Checkbox, Button, Divider } from 'semantic-ui-react';
+import { Form, Checkbox, Grid, Divider } from 'semantic-ui-react';
 import { IconButton } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import MicrosoftIcon from '@mui/icons-material/Microsoft';
@@ -51,17 +51,26 @@ export default createBoard({
                                     Forgot password
                                 </a>
                             </div>
-                            <Button
-                                type="submit"
-                                className={LoginPage_board_module['sign-in-button']}
-                            >
-                                Sign In
-                            </Button>
+                            <button className={LoginPage_board_module['sign-in1']}>Sign In</button>
                         </Form>
-                        <div className={LoginPage_board_module.divider_container}>
-                            <Divider className={LoginPage_board_module['divider']} />
-                            <Divider />
-                        </div>
+                        <Divider className={LoginPage_board_module['divider-container']}>
+                            <div className={LoginPage_board_module['divider-text01']}>Or</div>
+                        </Divider>
+                        <button className={LoginPage_board_module['social-login']}>
+                            <div className={LoginPage_board_module.grid2}>
+                                <img src="/src/assets/google-logo-DXjxL3jJ.svg" />
+                                Continue with Google
+                            </div>
+                        </button>
+                        <button className={LoginPage_board_module['social-login']}>
+                            <div className={LoginPage_board_module.grid2}>
+                                <img
+                                    src="/src/assets/microsoft-logo-VF8UJ1xx.svg"
+                                    className={LoginPage_board_module['microsoft-logo']}
+                                />
+                                Continue with Microsoft{' '}
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>
