@@ -23,6 +23,10 @@
 }
 .logo {
   margin: 30px;
+  text-align: center;
+  display: block;
+  align-self: center;
+  height: 150px;
 }
 .grid1 {
   display: grid;
@@ -32,7 +36,7 @@
   height: 100%;
 }
 .H1 {
-  margin-top: 300px;
+  margin-top: 270px;
   text-align: start;
   text-decoration-line: none;
   text-decoration-style: solid;
@@ -48,10 +52,15 @@
 .login-form-background {
   background-color: #ffffff;
   border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
 }
 .login-side {
-  margin-top: 250px;
-  padding: 100px;
+  margin-top: 100px;
+  padding: 70px;
+  align-self: center;
 }
 .getstarted {
   margin: 2px 2px 50px;
@@ -148,4 +157,20 @@
   font-family:
     Trebuchet MS,
     sans-serif;
+}
+.login-side-footer {
+  text-align: center;
+  margin-top: 100px;
+}
+.login-side-footer-text {
+}
+.grid3 {
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  gap: 0px;
+  align-items: center;
+  justify-items: center;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-content: center;
 }

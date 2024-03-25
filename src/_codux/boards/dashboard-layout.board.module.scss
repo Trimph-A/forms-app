@@ -1,0 +1,16 @@
+
+
+$spacing-module: 0.5rem;
+
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    padding-top: $spacing-module;
+    padding-bottom: $spacing-module;
+    padding-left: calc($spacing-module * 2);
+    padding-right: calc($spacing-module * 2);
+    background-color: rgba(#bb4430, 0.1);
+    color: #bb4430;
+}

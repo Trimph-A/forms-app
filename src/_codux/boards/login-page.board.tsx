@@ -14,12 +14,12 @@ export default createBoard({
                 <div>
                     <img
                         alt=""
-                        src="/src/assets/eMRC-logo.png"
+                        src="/src/assets/kedco.png"
                         width={300}
                         className={LoginPage_board_module.logo}
                     />
                     <h1 className={LoginPage_board_module.H1}>
-                        Perfomance Monitoring Tool For Large Scale Asset Management and Perfomance
+                        Perfomance Monitoring Tool For Large Scale Asset Management and Productivity
                         Reporting{' '}
                     </h1>
                 </div>
@@ -58,7 +58,7 @@ export default createBoard({
                         </Divider>
                         <button className={LoginPage_board_module['social-login']}>
                             <div className={LoginPage_board_module.grid2}>
-                                <img src="/src/assets/google-logo-DXjxL3jJ.svg" />
+                                <img src="/src/assets/google-logo-DXjxL3jJ.svg" height="34" />
                                 Continue with Google
                             </div>
                         </button>
@@ -71,6 +71,13 @@ export default createBoard({
                                 Continue with Microsoft{' '}
                             </div>
                         </button>
+                        <div className={LoginPage_board_module['login-side-footer']}>
+                            <h3 className={LoginPage_board_module['login-side-footer-text']}>
+                                powered by{' '}
+                            </h3>
+                            <img src="/src/assets/emrc logo black.svg" alt="" height="30" />
+                            <div className={LoginPage_board_module.grid3}></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -78,9 +85,9 @@ export default createBoard({
     ),
     isSnippet: true,
     environmentProps: {
-        canvasHeight: 1195.2809901015837,
+        canvasHeight: 1080,
         canvasWidth: 1920,
-        windowHeight: 1196,
+        windowHeight: 1080,
         windowWidth: 1920,
     },
 });
