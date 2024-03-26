@@ -1,0 +1,44 @@
+.root {
+}
+.form {
+  width: 100%;
+}
+.selection {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  flex-direction: row;
+  gap: 0px;
+  margin-bottom: 50px;
+  margin-left: 0em;
+}
+.selection-boxex {
+}
+.hourly-input {
+  width: 8.333%;
+}
+.hourlyforms {
+  width: 100%;
+  text-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.load-reading-header {
+  text-align: start;
+  font-size: 1.1rem;
+}
+.Hourly-box {
+  margin-top: 50px;
+}
+.pm {
+  text-align: start;
+}
+.am {
+}
+.lastvalue {
+  text-align: center;
+  background-color: #f7f7f7;
+}

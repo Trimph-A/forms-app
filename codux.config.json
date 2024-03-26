@@ -25,7 +25,7 @@
   },
   "svgLoader": "both", 
   "addPanel": {
-  "assets": ["@codux-boards/react-semantic"]
+  "assets": ["@codux-boards/react-semantic", "@codux-boards/react-blueprint"]
   }
 
 }

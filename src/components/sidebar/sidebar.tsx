@@ -27,6 +27,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 </Nav.Item>
             </Nav>
             <div className={styles['footer-sidebar']}>
+                <h1 className={styles['powered-by']}>powered by</h1>
                 <img
                     src="/src/assets/emrc logo black.svg"
                     alt=""

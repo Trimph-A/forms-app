@@ -38,7 +38,7 @@
 .landing-body {
   height: 1080px;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: #dbe6ee;
   padding: 30px;
 }
 .header-landing-body {
@@ -50,6 +50,7 @@
   align-items: center;
   align-content: center;
   justify-content: center;
+  flex-direction: column;
 }
 .grid1 {
   display: grid;
@@ -144,4 +145,8 @@
 .form-button {
   background-color: #000000;
   color: #fdfdfd;
+}
+.subtext {
+  font-size: 18px;
+  margin: -4px;
 }

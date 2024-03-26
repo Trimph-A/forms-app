@@ -24,6 +24,10 @@ export default createBoard({
                     <h2 className={LandingPage_board_module['option-card-header']}>
                         SELECT A FORM
                     </h2>
+                    <h6 className={LandingPage_board_module.subtext}>
+                        Read our views on the things that matter to you. And get to know our people.
+                        We make the difference.
+                    </h6>
                 </div>
                 <div className={LandingPage_board_module['option-cards']}>
                     <div className={LandingPage_board_module.grid1}>
