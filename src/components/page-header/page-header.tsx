@@ -17,7 +17,10 @@ interface PageHeaderProps extends PageHeaderSubcomponets {
 const PageHeader = ({ className, children }: PageHeaderProps) => {
     return (
         <header className={classNames(styles.root, className)}>
-            <div>{children}</div>
+            <div>
+                <PageTitle />
+                <PageSubtitle />
+            </div>
             <div className={styles.utilities}>
                 <div className={styles.actionsSection}>
                     <StatusBadgeIconButton

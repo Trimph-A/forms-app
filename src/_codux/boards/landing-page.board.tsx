@@ -1,12 +1,15 @@
 import { createBoard } from '@wixc3/react-board';
 import LandingPage_board_module from './landing-page.board.module.scss';
 import { Step, Card, Image, Button } from 'semantic-ui-react';
+import PageHeader from '../../components/page-header/page-header';
 
 export default createBoard({
     name: 'landing-page',
     Board: () => (
         <div>
-            <div />
+            <div>
+                <PageHeader className={LandingPage_board_module['pg-header-landing']} />
+            </div>
             <div className={LandingPage_board_module['landing-bg']}>
                 <div className={LandingPage_board_module.grid}>
                     <div>
@@ -129,6 +132,6 @@ export default createBoard({
     environmentProps: {
         windowWidth: 1920,
         canvasWidth: 1920,
-        windowHeight: 2160,
+        windowHeight: 1905,
     },
 });

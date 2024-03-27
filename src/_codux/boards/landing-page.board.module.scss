@@ -36,9 +36,8 @@
   height: 90px;
 }
 .landing-body {
-  height: 1080px;
   width: 100%;
-  background-color: #dbe6ee;
+  background-color: #f9f9ff;
   padding: 30px;
 }
 .header-landing-body {
@@ -149,4 +148,7 @@
 .subtext {
   font-size: 18px;
   margin: -4px;
+}
+.pg-header-landing {
+  display: grid;
 }

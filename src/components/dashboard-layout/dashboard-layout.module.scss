@@ -2,23 +2,28 @@
 @import '../../styles/media';
 
 .root {
-    min-height: 100%;
+  min-height: 100%;
 
-    @media only screen and (min-width: #{$media-tablet + 1}) {
-        display: grid;
-        grid-template-columns: 16rem 1fr;
-    }
+  @media only screen and (min-width: #{$media-tablet + 1}) {
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+  }
 }
 
 .sidebar {
-    @media only screen and (max-width: #{$media-tablet}) {
-        display: none;
-    }
+  @media only screen and (max-width: #{$media-tablet}) {
+    display: none;
+  }
 }
 
 .pageContent {
-    padding-top: $spacing-page-block;
-    padding-bottom: $spacing-page-block;
-    padding-left: $spacing-page-inline;
-    padding-right: $spacing-page-inline;
+  padding-top: $spacing-page-block;
+  padding-bottom: $spacing-page-block;
+  padding-left: $spacing-page-inline;
+  padding-right: $spacing-page-inline;
+  border: 1.5px solid #e2e2e2;
+  height: 100%;
+  border-top: 0px solid #e2e2e2;
+  border-right: 0px solid #e2e2e2;
+  border-bottom: 0px solid #e2e2e2;
 }

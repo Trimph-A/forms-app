@@ -35,7 +35,7 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
 
     const [selectedTime, setSelectedTime] = useState('');
 
-    const handleTimeChange = (event) => {
+    const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSelectedTime(event.target.value);
     };
     return (

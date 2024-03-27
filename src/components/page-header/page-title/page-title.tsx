@@ -8,5 +8,10 @@ export interface PageTitleProps {
 }
 
 export const PageTitle = ({ className, children }: PageTitleProps) => {
-    return <h1 className={classNames(styles.root, className)}>{children}</h1>;
+    return (
+        <h1 className={classNames(styles.root, className)}>
+            {children}
+            <h1 className={styles.headers}>Welcome Back</h1>
+        </h1>
+    );
 };

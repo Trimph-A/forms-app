@@ -9,6 +9,9 @@ export interface PageSubtitleProps {
 
 export const PageSubtitle = ({ className, children }: PageSubtitleProps) => {
     return (
-        <span className={classNames(styles.root, className)}>{children}</span>
+        <span className={classNames(styles.root, className)}>
+            {children}
+            <h3>Input Asset Performance </h3>
+        </span>
     );
 };
