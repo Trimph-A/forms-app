@@ -42,3 +42,42 @@
   text-align: center;
   background-color: #f7f7f7;
 }
+.interruptions {
+  margin: 50px 0px 10px;
+}
+.faults-select {
+}
+.faults-dropdown {
+}
+.faults {
+  margin-top: 40px;
+}
+.faults-time-picker {
+}
+.energy-reading {
+  margin-bottom: 20px;
+}
+.save-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.save-button {
+  color: #ffffff;
+  background-color: #0054b3;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-weight: 700;
+  font-family:
+    Trebuchet MS,
+    sans-serif;
+}
+.submit-button {
+  font-weight: 700;
+  border-radius: 3px;
+  background-color: #0054b3;
+  border: 1px solid transparent;
+  font-family:
+    Trebuchet MS,
+    sans-serif;
+}

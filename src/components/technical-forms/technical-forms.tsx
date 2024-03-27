@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import styles from './technical-forms.module.scss';
 import { useState } from 'react';
+import DatePicker from 'react-datepicker';
 import { Form, Header, Icon, Checkbox, Button } from 'semantic-ui-react';
 
 export interface TechnicalFormsProps {
@@ -13,15 +14,15 @@ export interface TechnicalFormsProps {
  */
 
 const options = [
-    { key: 'm', text: 'Male', value: 'male' },
-    { key: 'f', text: 'Female', value: 'female' },
-    { key: 'o', text: 'Other', value: 'other' },
+    { key: 'm', text: 'Kano', value: 'kano' },
+    { key: 'f', text: 'Katsina', value: 'katsina' },
+    { key: 'o', text: 'Jigawa', value: 'jigawa' },
 ];
 
 const options1 = [
-    { key: 'm', text: 'Male', value: 'male' },
-    { key: 'f', text: 'Female', value: 'female' },
-    { key: 'o', text: 'Other', value: 'other' },
+    { key: 'm', text: 'Kano', value: 'kano' },
+    { key: 'f', text: 'Katsina', value: 'katsina' },
+    { key: 'o', text: 'Jigawa', value: 'jigawa' },
 ];
 
 export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
@@ -31,6 +32,12 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
     const [selectedRadio, setSelectedRadio] = useState<string>();
 
     const handleChange = (value: string) => setSelectedRadio(value);
+
+    const [selectedTime, setSelectedTime] = useState('');
+
+    const handleTimeChange = (event) => {
+        setSelectedTime(event.target.value);
+    };
     return (
         <div className={classNames(styles.root, className)}>
             <Form className={styles.form}>
@@ -75,6 +82,11 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
                             />
                             <Form.Input
                                 label=""
+                                placeholder="05:00"
+                                className={styles['hourly-input']}
+                            />
+                            <Form.Input
+                                label=""
                                 placeholder="06:00"
                                 className={styles['hourly-input']}
                             />
@@ -103,15 +115,15 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
                                 placeholder="11:00"
                                 className={styles['hourly-input']}
                             />
+                        </Form.Group>
+                    </div>
+                    <div className={classNames(styles.hourlyforms, styles.pm)}>
+                        <Form.Group className={styles.selection}>
                             <Form.Input
                                 label=""
                                 placeholder="12:00"
                                 className={styles['hourly-input']}
                             />
-                        </Form.Group>
-                    </div>
-                    <div className={classNames(styles.hourlyforms, styles.pm)}>
-                        <Form.Group className={styles.selection}>
                             <Form.Input
                                 label=""
                                 placeholder="13:00"
@@ -167,20 +179,51 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
                                 placeholder="23:00"
                                 className={styles['hourly-input']}
                             />
-                            <Form.Input
-                                label=""
-                                placeholder="--:--"
-                                className={classNames(styles['hourly-input'], styles.lastvalue)}
-                                disabled
-                            />
                         </Form.Group>
                     </div>
                 </div>
+                <div className={styles.faults}>
+                    <h5 className={classNames(styles['load-reading-header'], styles.interruptions)}>
+                        Fault Reporting{' '}
+                    </h5>
+                    <Form.Group className={styles['faults-select']}>
+                        <Form.Select
+                            label=""
+                            placeholder="Type of Fault"
+                            options={options}
+                            className={styles['faults-dropdown']}
+                        />
+                        <Form.Field className={styles['faults-time-picker']}>
+                            <label></label>
+                            <Form.Input
+                                type="time"
+                                value={selectedTime}
+                                onChange={handleTimeChange}
+                                placeholder="Time of Occurence"
+                            />
+                        </Form.Field>
+                        <Form.Field className={styles['faults-time-picker']}>
+                            <label></label>
+                            <Form.Input
+                                type="time"
+                                value={selectedTime}
+                                onChange={handleTimeChange}
+                                placeholder="Time of Resolve"
+                            />
+                        </Form.Field>
+                    </Form.Group>
+                </div>
+                <div className={styles['energy-reading']}>
+                    <h5 className={styles['load-reading-header']}>Energy Reading</h5>
 
-                <Form.Checkbox label="I agree to the Terms and Conditions" />
-                <Form.Button>Submit</Form.Button>
+                    <Form.Input label="" placeholder="Energy Reading" />
+                </div>
+                <div className={styles['save-submit']}>
+                    <button className={styles['save-button']}>Save Changes</button>
+                    <button className={styles['submit-button']} type="submit"> Submit
+                    </button>
+                </div>
             </Form>
-
         </div>
     );
 };

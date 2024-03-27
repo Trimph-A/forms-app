@@ -6,7 +6,8 @@ export default createBoard({
     Board: () => <TechnicalForms />,
     isSnippet: true,
     environmentProps: {
-        canvasWidth: 996,
+        canvasWidth: 948.9055893349205,
         windowWidth: 2487,
+        windowHeight: 640,
     },
 });

@@ -11,11 +11,17 @@
   padding-left: $spacing-2;
   padding-right: $spacing-2;
   background-color: rgba($color-red, 0.1);
-  color: $color-red;
+  color: $color-black;
   width: 100%;
   flex-wrap: nowrap;
 }
 .dashboard-layout {
   width: 100%;
   grid-template-columns: 22rem 1fr;
+}
+.dash {
+  width: 100%;
+}
+.top-bar {
+  width: 100%;
 }

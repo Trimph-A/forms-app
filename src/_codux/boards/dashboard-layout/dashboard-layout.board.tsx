@@ -6,18 +6,19 @@ export default createBoard({
     name: '🧩 Dashboard Layout',
     Board: () => (
         <DashboardLayout className={styles['dashboard-layout']}>
-            <div className={styles.root}>Page Content</div>
+            <div />
         </DashboardLayout>
     ),
     environmentProps: {
         canvasMargin: {
             left: 0,
             right: 0,
-            top: 1,
-            bottom: 1,
+            top: 0,
+            bottom: 0,
         },
-        windowWidth: 1113,
-        windowHeight: 799,
+        canvasWidth: 1920,
+        windowWidth: 1920,
+        windowHeight: 1080,
     },
     isSnippet: true,
 });
