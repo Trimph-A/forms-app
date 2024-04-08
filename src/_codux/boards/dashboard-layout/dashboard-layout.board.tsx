@@ -3,6 +3,7 @@ import { DashboardLayout } from '../../../components/dashboard-layout/dashboard-
 import styles from './dashboard-layout.board.module.scss';
 import PageHeader from '../../../components/page-header/page-header';
 import { TechnicalForms } from '../../../components/technical-forms/technical-forms';
+import { Breadcrumb, Divider } from 'semantic-ui-react';
 
 export default createBoard({
     name: '🧩 Dashboard Layout',
@@ -10,6 +11,9 @@ export default createBoard({
         <DashboardLayout className={styles['dashboard-layout']}>
             <div>
                 <PageHeader />
+            </div>
+            <div style={{ width: '100%' }}>
+                <Divider className={styles['divider-header']} />
             </div>
             <div className={styles.upperlay}>
                 <h3 className={styles.header}>Technical Data Entry</h3>
@@ -28,7 +32,7 @@ export default createBoard({
         },
         canvasWidth: 1920,
         windowWidth: 1920,
-        windowHeight: 851,
+        windowHeight: 839,
     },
     isSnippet: true,
 });

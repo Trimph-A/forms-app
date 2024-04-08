@@ -43,7 +43,7 @@
   background-color: #f7f7f7;
 }
 .interruptions {
-  margin: 50px 0px 10px;
+  margin: 50px 0px 30px;
 }
 .faults-select {
 }
@@ -80,4 +80,65 @@
   font-family:
     Trebuchet MS,
     sans-serif;
+}
+.select-box {
+}
+
+.customInput {
+  position: relative;
+}
+
+.placeholder {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-out;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+}
+
+.active {
+  top: 8px;
+  font-size: 12px;
+}
+
+/* Adjust input padding when label is active */
+.customInput input {
+  padding-top: 20px; /* Adjust this value as needed */
+}
+
+/* Add styles to move placeholder up when input has focus */
+.customInput input:focus + .placeholder {
+  top: 8px;
+  font-size: 12px;
+}
+.time-function {
+  color: #9ca2aa;
+}
+.add-fault {
+  font-weight: 900;
+  color: #ffffff;
+  background-color: #0054b3;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100px;
+  justify-items: center;
+  margin-top: 2px;
+  margin-left: 0px;
+  margin-bottom: 30px;
+}
+.header-fault {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: baseline;
+  margin-bottom: 10px;
 }

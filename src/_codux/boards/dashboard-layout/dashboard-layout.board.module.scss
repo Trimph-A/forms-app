@@ -27,18 +27,28 @@
   width: 100%;
 }
 .lay {
-  width: 1520px;
+  width: 1460px;
   background-color: $color-white;
   padding: 20px;
+  border: 1px solid $color-gray;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .upperlay {
-  background-color: $color-light-gray;
+  background-color: $color-white;
   padding: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-top: 40px;
+  border: 1px solid $color-gray;
 }
 .header {
   text-align: center;
   font-size: 2rem;
+}
+.divider-header {
+  width: 100%;
 }

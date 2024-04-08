@@ -79,7 +79,7 @@ export default createBoard({
                                     <Card.Header
                                         className={LandingPage_board_module['card-header']}
                                     >
-                                        Technical Data Entry{' '}
+                                        Commercial Data Entry{' '}
                                     </Card.Header>
                                     <Card.Description>
                                         Lizards are a widespread group of squamate reptiles, with
@@ -91,7 +91,12 @@ export default createBoard({
                                     extra
                                     className={LandingPage_board_module['card-button']}
                                 >
-                                    <Button color="black">Go to Form</Button>
+                                    <Button
+                                        className={LandingPage_board_module.buttonformenter}
+                                        color="black"
+                                    >
+                                        Go to Form
+                                    </Button>
                                 </Card.Content>
                             </div>
                         </div>
@@ -107,7 +112,7 @@ export default createBoard({
                                     <Card.Header
                                         className={LandingPage_board_module['card-header']}
                                     >
-                                        Technical Data Entry{' '}
+                                        Financial Data Entry{' '}
                                     </Card.Header>
                                     <Card.Description>
                                         Lizards are a widespread group of squamate reptiles, with
@@ -119,7 +124,7 @@ export default createBoard({
                                     extra
                                     className={LandingPage_board_module['card-button']}
                                 >
-                                    <Button color="blue">Go to Form</Button>
+                                    <Button color="black">Go to Form</Button>
                                 </Card.Content>
                             </div>
                         </div>
