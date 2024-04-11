@@ -219,7 +219,6 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
                                 label=""
                                 placeholder="00:00"
                                 className={styles['hourly-input']}
-                                type="text" // Set type to "text"
                             />
                             <Form.Input
                                 label=""

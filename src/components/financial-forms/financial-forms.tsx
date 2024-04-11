@@ -47,16 +47,16 @@ export const FinancialForms = ({ className }: FinancialFormsProps) => {
                 <div className={styles['opex-inputs']}>
                     <h5 className={styles['load-reading-header']}>Input Monthly OPEX</h5>
                     <Form.Group widths="equal" className={styles.selection}>
-                        <Form.Input label="" placeholder="Technical" />
-                        <Form.Input label="" placeholder="IT" />
-                        <Form.Input label="" placeholder="Commercial" />
-                        <Form.Input label="" placeholder="Admin" />
-                        <Form.Input label="" placeholder="Security" />
+                        <Form.Input label="" placeholder="Technical" type="number" />
+                        <Form.Input label="" placeholder="IT" type="number" />
+                        <Form.Input label="" placeholder="Commercial" type="number" />
+                        <Form.Input label="" placeholder="Admin" type="number" />
+                        <Form.Input label="" placeholder="Security" type="number" />
                     </Form.Group>
                 </div>
                 <div className={styles['save-submit-financial']}>
-                    <button className={styles['save-button']}>Save Changes</button>
-                    <button className={styles['submit-button']} type="submit">
+                    <button className={styles['save-button-financial']}>Save Changes</button>
+                    <button type="submit" className={styles['submit-financial']}>
                         {' '}
                         Submit
                     </button>

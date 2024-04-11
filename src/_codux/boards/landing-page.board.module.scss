@@ -5,7 +5,7 @@
 .landing-bg {
   height: 1080px;
   width: 100%;
-  background-image: radial-gradient(circle at 80% 47%, #00a9f4 0%, #2251ff 13%, #042a76 71%);
+  background-image: url('../src/assets/landing page picture.svg');
   background-color: transparent;
   background-position: 50% 50%;
   background-size: 100% 100%;
@@ -24,8 +24,8 @@
   color: #dff7ff;
   font-size: 4rem;
   line-height: 1.3em;
-  margin: 350px 30px 30px;
-  padding: 30px;
+  margin: 350px 50px 30px 30px;
+  padding: 30px 70px 30px 30px;
 }
 .topline {
   color: #ffffff;
@@ -84,7 +84,7 @@
   flex-wrap: wrap;
 }
 .techformsimg {
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   padding: 20px;
 }
 .techform {
@@ -114,7 +114,7 @@
   font-family:
     Trebuchet MS,
     sans-serif;
-  font-size: 1.5em;
+  font-size: 2em;
   margin-bottom: 20px;
   color: #354ccf;
 }

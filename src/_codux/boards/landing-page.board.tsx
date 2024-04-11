@@ -37,7 +37,7 @@ export default createBoard({
                         <div className={LandingPage_board_module.techform}>
                             <div className={LandingPage_board_module['technical-forms-card']}>
                                 <Image
-                                    src="/src/assets/technical-data-entry.svg"
+                                    src="/src/assets/Technical Data entry0.svg"
                                     wrapped={false}
                                     ui={true}
                                     className={LandingPage_board_module.techformsimg}
@@ -60,7 +60,8 @@ export default createBoard({
                                 >
                                     <Button
                                         className={LandingPage_board_module['form-button']}
-                                        color="black"
+                                        color="facebook"
+                                        onClick={undefined}
                                     >
                                         Go to Form
                                     </Button>
@@ -70,7 +71,7 @@ export default createBoard({
                         <div className={LandingPage_board_module.techform}>
                             <div className={LandingPage_board_module['technical-forms-card']}>
                                 <Image
-                                    src="/src/assets/technical-data-entry.svg"
+                                    src="/src/assets/commercial Data entry.svg"
                                     wrapped={true}
                                     ui={true}
                                     className={LandingPage_board_module.techformsimg}
@@ -93,7 +94,7 @@ export default createBoard({
                                 >
                                     <Button
                                         className={LandingPage_board_module.buttonformenter}
-                                        color="black"
+                                        color="facebook"
                                     >
                                         Go to Form
                                     </Button>
@@ -103,7 +104,7 @@ export default createBoard({
                         <div className={LandingPage_board_module.techform}>
                             <div className={LandingPage_board_module['technical-forms-card']}>
                                 <Image
-                                    src="/src/assets/technical-data-entry.svg"
+                                    src="/src/assets/Financial Data entry.svg"
                                     wrapped={true}
                                     ui={true}
                                     className={LandingPage_board_module.techformsimg}
@@ -124,7 +125,7 @@ export default createBoard({
                                     extra
                                     className={LandingPage_board_module['card-button']}
                                 >
-                                    <Button color="black">Go to Form</Button>
+                                    <Button color="facebook">Go to Form</Button>
                                 </Card.Content>
                             </div>
                         </div>

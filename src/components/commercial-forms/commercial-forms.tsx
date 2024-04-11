@@ -37,24 +37,17 @@ export const CommercialForms = ({ className }: CommercialFormsProps) => {
                     <Form.Select fluid label="Feeders" options={options} placeholder="Feeders" />
                 </Form.Group>
                 <div className={styles['opex-inputs']}>
-                    <h5 className={styles['load-reading-header']}>Collections</h5>
-                    <Form.Group widths="equal" className={styles.selection}>
-                        <Form.Input label="" placeholder="Revenue Collected" />
-                        <Form.Input label="" placeholder="Customer Response" />
-                    </Form.Group>
-                </div>
-                <div className={styles['opex-inputs']}>
                     <h5 className={styles['load-reading-header']}>Monthly Billing</h5>
                     <Form.Group widths="equal" className={styles.selection}>
-                        <Form.Input label="" placeholder="Energy Billed" />
-                        <Form.Input label="" placeholder="Revenue Billed" />
+                        <Form.Input label="" placeholder="Energy Billed (MW)" type="number" />
+                        <Form.Input label="" placeholder="Revenue Billed (₦)" type="number" />
                     </Form.Group>
                 </div>
                 <div className={styles['opex-inputs']}>
                     <h5 className={styles['load-reading-header']}>Customer Data</h5>
                     <Form.Group widths="equal" className={styles.selection}>
-                        <Form.Input label="" placeholder="Customer Population" />
-                        <Form.Input label="" placeholder="Customer Billed" />
+                        <Form.Input label="" placeholder="Customer Population" type="number" />
+                        <Form.Input label="" placeholder="Customer Billed" type="number" />
                     </Form.Group>
                 </div>
                 <div className={styles['excel-upload']}>
