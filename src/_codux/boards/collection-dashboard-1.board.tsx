@@ -11,7 +11,9 @@ export default createBoard({
         <div>
             <CollectionDashboardLayout>
                 <div>
-                    <PageHeader />
+                    <PageHeader>
+                        <div />
+                    </PageHeader>
                 </div>
                 <div style={{ width: '100%' }}>
                     <Divider />

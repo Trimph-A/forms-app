@@ -10,7 +10,9 @@ export default createBoard({
     Board: () => (
         <DashboardLayout className={styles['dashboard-layout']}>
             <div>
-                <PageHeader />
+                <PageHeader>
+                    <div />
+                </PageHeader>
             </div>
             <div style={{ width: '100%' }}>
                 <Divider className={styles['divider-header']} />

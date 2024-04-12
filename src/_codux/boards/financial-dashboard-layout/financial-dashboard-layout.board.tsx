@@ -10,7 +10,9 @@ export default createBoard({
         <div>
             <FinancialDashboardLayout>
                 <div>
-                    <PageHeader />
+                    <PageHeader>
+                        <div />
+                    </PageHeader>
                 </div>
                 <div style={{ width: '100%' }}>
                     <Divider />
