@@ -125,7 +125,7 @@ const feeders: {
     jigawa: {
         // Feeders for Jigawa
     },
-    // Add more feeders for other states and districts
+    // 
 };
 
 export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
@@ -362,7 +362,6 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
                     {faultReports.map((fault, index) => (
                         <Fragment key={index}>
                             {' '}
-                            {/* Wrap the JSX within Fragment */}
                             <Form.Group className={styles['faults-select']}>
                                 <Form.Select
                                     label=""
