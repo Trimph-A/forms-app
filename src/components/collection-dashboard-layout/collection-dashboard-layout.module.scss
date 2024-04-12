@@ -1,23 +1,14 @@
-.collections-sidebar {
-}
-.pagecontent {
-}
+@import '../../styles/spacing';
+@import '../../styles/media';
+
 .root {
+  width: 1920px;
+  max-width: 1920px;
   min-height: 100%;
-
-  @media only screen and (min-width: #{$media-tablet + 1}) {
-    display: grid;
-    grid-template-columns: 16rem 1fr;
-  }
+  display: grid;
+  grid-template-columns: 25em 1fr;
 }
-
-.CommercialCollectionSidebar {
-  @media only screen and (max-width: #{$media-tablet}) {
-    display: none;
-  }
-}
-
-.pageContent {
+.collectioncontent {
   padding-top: $spacing-page-block;
   padding-bottom: $spacing-page-block;
   padding-left: $spacing-page-inline;

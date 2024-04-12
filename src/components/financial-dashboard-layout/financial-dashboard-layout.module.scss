@@ -1,0 +1,22 @@
+@import '../../styles/spacing';
+@import '../../styles/media';
+
+
+.root {
+  width: 1920px;
+  max-width: 1920px;
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 22rem 1fr;
+}
+.financial-page-content {
+  padding-top: $spacing-page-block;
+  padding-bottom: $spacing-page-block;
+  padding-left: $spacing-page-inline;
+  padding-right: $spacing-page-inline;
+  border: 1.5px solid #e2e2e2;
+  height: 100%;
+  border-top: 0px solid #e2e2e2;
+  border-right: 0px solid #e2e2e2;
+  border-bottom: 0px solid #e2e2e2;
+}

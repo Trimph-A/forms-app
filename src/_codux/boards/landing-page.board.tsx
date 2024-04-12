@@ -8,7 +8,9 @@ export default createBoard({
     Board: () => (
         <div>
             <div>
-                <PageHeader className={LandingPage_board_module['pg-header-landing']} />
+                <PageHeader className={LandingPage_board_module['pg-header-landing']}>
+                    <div />
+                </PageHeader>
             </div>
             <div className={LandingPage_board_module['landing-bg']}>
                 <div className={LandingPage_board_module.grid}>

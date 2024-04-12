@@ -18,8 +18,12 @@ const PageHeader = ({ className, children }: PageHeaderProps) => {
     return (
         <header className={classNames(styles.root, className)}>
             <div>
-                <PageTitle />
-                <PageSubtitle />
+                <PageTitle>
+                    <div />
+                </PageTitle>
+                <PageSubtitle>
+                    <div />
+                </PageSubtitle>
             </div>
             <div className={styles.utilities}>
                 <div className={styles.actionsSection}>
