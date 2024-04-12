@@ -25,7 +25,9 @@ const states = [
     { key: 'jigawa', text: 'Jigawa', value: 'jigawa' },
 ];
 
-const businessDistricts = {
+const businessDistricts: {
+    [key: string]: { key: string; text: string; value: string; }[];
+} = {
     kano: [
         { key: 'kano_central', text: 'Kano Central', value: 'kano_central' },
         { key: 'kano_north', text: 'Kano North', value: 'kano_north' },
@@ -44,7 +46,11 @@ const businessDistricts = {
     ],
 };
 
-const feeders = {
+const feeders: {
+    [state: string]: {
+        [district: string]: { key: string; text: string; value: string; }[];
+    };
+} = {
     kano: {
         kano_central: [
             { key: 'kc_11kv_1', text: '11KV Dr Bala', value: 'kano_central_11kv Dr Bala' },
