@@ -34,7 +34,7 @@ export default createBoard({
         },
         canvasWidth: 1920,
         windowWidth: 1920,
-        windowHeight: 839,
+        windowHeight: 1380,
     },
     isSnippet: true,
 });

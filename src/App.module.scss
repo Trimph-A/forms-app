@@ -7,3 +7,10 @@
   border: 2px dashed #888888;
   border-radius: 30px;
 }
+.dashboard-layout {
+  grid-template-columns: 22rem 1fr;
+}
+.lay {
+  margin: 20px;
+  padding: 20px;
+}

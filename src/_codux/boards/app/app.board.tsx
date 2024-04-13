@@ -3,9 +3,10 @@ import App from '../../../App';
 
 export default createBoard({
     name: 'App',
-    Board: () => null,
+    Board: () => <App />,
     environmentProps: {
-        windowWidth: 1024,
-        windowHeight: 768,
+        canvasWidth: 1920,
+        windowWidth: 1920,
+        windowHeight: 1380,
     },
 });
