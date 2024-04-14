@@ -2,6 +2,7 @@
 }
 .form {
   width: 100%;
+  display: block;
 }
 .selection {
   width: 100%;
@@ -85,33 +86,33 @@
 }
 
 .customInput {
-    position: relative;
+  position: relative;
 }
 
 .placeholder {
-    position: absolute;
-    left: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 0.2s ease-out;
-    color: rgba(0, 0, 0, 0.6);
-    font-size: 14px;
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-out;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
 }
 
 .active {
-    top: 8px;
-    font-size: 12px;
+  top: 8px;
+  font-size: 12px;
 }
 
 /* Adjust input padding when label is active */
 .customInput input {
-    padding-top: 20px; /* Adjust this value as needed */
+  padding-top: 20px; /* Adjust this value as needed */
 }
 
 /* Add styles to move placeholder up when input has focus */
 .customInput input:focus + .placeholder {
-    top: 8px;
-    font-size: 12px;
+  top: 8px;
+  font-size: 12px;
 }
 .time-function {
   color: #9ca2aa;

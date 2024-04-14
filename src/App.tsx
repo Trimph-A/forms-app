@@ -18,8 +18,8 @@ function App() {
                 <Divider className={styles['divider-header']} />
             </div>
             <div className={styles.upperlay}>
-                <h3 className={styles.header}>Technical Data Entry</h3>
-                <div className={styles.lay}>
+                <h3 className={styles.lay}>Technical Data Entry</h3>
+                <div className={styles['lower-lay']}>
                     <TechnicalForms />
                 </div>
             </div>
