@@ -1,29 +1,21 @@
-import styles from './App.module.scss';
-import { DashboardLayout } from './components/dashboard-layout/dashboard-layout';
-import { TechnicalForms } from './components/technical-forms/technical-forms';
-import { Breadcrumb, Divider } from 'semantic-ui-react';
-import PageHeader from './components/page-header/page-header';
-import Icon_module from './components/icon/icon.module.scss';
-import Classnames from 'classnames';
-
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginPageBoard from './_codux/boards/login-page.board'; 
+import LandingPageBoard from './_codux/boards/landing-page.board'; 
+import DashboardLayout from './_codux/boards/dashboard-layout/dashboard-layout.board'; 
+import CollectionDashboardLayout from "./_codux/boards/collection-dashboard-1.board";
+import FinancialDashboardLayout from "./_codux/boards/financial-dashboard-layout/financial-dashboard-layout.board"
 function App() {
     return (
-        <DashboardLayout className={styles['dashboard-layout']}>
-            <div>
-                <PageHeader>
-                    <div />
-                </PageHeader>
-            </div>
-            <div style={{ width: '100%' }}>
-                <Divider className={styles['divider-header']} />
-            </div>
-            <div className={styles.upperlay}>
-                <h3 className={styles.lay}>Technical Data Entry</h3>
-                <div className={styles['lower-lay']}>
-                    <TechnicalForms />
-                </div>
-            </div>
-        </DashboardLayout>
+        <Router>
+            <Routes>
+                <Route path="/" element={<LoginPageBoard.Board />} /> {/* Route to LoginPage */}
+                <Route path="/landing" element={<LandingPageBoard.Board />} /> {/* Route to LandingPage */}
+                <Route path="/dashboard-layout" element={<DashboardLayout.Board />} /> {/* Route to DashboardLayout */}
+                <Route path="/collection-layout" element={<CollectionDashboardLayout.Board />} /> 
+                <Route path="/financial-layout" element={<FinancialDashboardLayout.Board />} /> 
+            </Routes>
+        </Router>
     );
 }
 

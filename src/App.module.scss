@@ -1,6 +1,6 @@
 .App {
   margin: 0 auto;
-  padding: 2.3em 3em 2em;
+  padding: 0em 0em 0em;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
 }
 .dashboard-layout {
   grid-template-columns: 22rem 1fr;
-  width: 1920px;
+  width: auto;
 }
 .lay {
   margin: 20px;

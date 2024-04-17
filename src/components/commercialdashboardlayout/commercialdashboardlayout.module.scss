@@ -1,15 +1,14 @@
 @import '../../styles/spacing';
 @import '../../styles/media';
 
-
 .root {
   width: 1920px;
   max-width: 1920px;
   min-height: 1085px;
   display: grid;
-  grid-template-columns: 22rem 1fr;
+  grid-template-columns: 1fr;
 }
-.financial-page-content {
+.pagelayout-commercial {
   padding-top: $spacing-page-block;
   padding-bottom: $spacing-page-block;
   padding-left: $spacing-page-inline;

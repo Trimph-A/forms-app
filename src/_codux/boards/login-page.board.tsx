@@ -1,14 +1,33 @@
 import { createBoard } from '@wixc3/react-board';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LoginPage_board_module from './login-page.board.module.scss';
 import Classnames from 'classnames';
-import { Form, Checkbox, Grid, Divider } from 'semantic-ui-react';
+import { Form, Checkbox, Divider } from 'semantic-ui-react';
 import { IconButton } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 import MicrosoftIcon from '@mui/icons-material/Microsoft';
 
-export default createBoard({
-    name: 'login-page',
-    Board: () => (
+const LoginPage = () => {
+    // State variables for email and password
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    // Function to handle login
+    const handleLogin = () => {
+        // Replace this with your actual login logic
+        // For example, you can send a request to your backend server to authenticate the user
+        // Simulating successful login for now
+        if (email === 'fortune@test.com' && password === 'test') {
+            console.log('Login successful!');
+        navigate('/landing');
+        } else {
+            console.log('Invalid email or password');
+        }
+    };
+
+    return (
         <div className={LoginPage_board_module.background}>
             <div className={LoginPage_board_module.grid1}>
                 <div>
@@ -36,11 +55,21 @@ export default createBoard({
                         <Form>
                             <Form.Field>
                                 <label>Email</label>
-                                <input type="email" placeholder="Enter your email" />
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
                             </Form.Field>
                             <Form.Field>
                                 <label>Password</label>
-                                <input type="password" placeholder="******" />
+                                <input
+                                    type="password"
+                                    placeholder="******"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
                             </Form.Field>
                             <div className={LoginPage_board_module.checkbox_forgotpassword}>
                                 <Checkbox
@@ -51,7 +80,12 @@ export default createBoard({
                                     Forgot password
                                 </a>
                             </div>
-                            <button className={LoginPage_board_module['sign-in1']}>Sign In</button>
+                            <button
+                                className={LoginPage_board_module['sign-in1']}
+                                onClick={handleLogin}
+                            >
+                                Sign In
+                            </button>
                         </Form>
                         <Divider className={LoginPage_board_module['divider-container']}>
                             <div className={LoginPage_board_module['divider-text01']}>Or</div>
@@ -82,7 +116,11 @@ export default createBoard({
                 </div>
             </div>
         </div>
-    ),
+    );
+};
+export default createBoard({
+    name: 'login-page',
+    Board: LoginPage,
     isSnippet: true,
     environmentProps: {
         canvasHeight: 1080,

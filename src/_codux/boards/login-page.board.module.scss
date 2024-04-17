@@ -1,10 +1,9 @@
 .grid {
   display: grid;
-  grid-template: 1fr / 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
-.Backgrou {
-}
+
 .background {
   width: 100%;
   height: 100%;
@@ -21,6 +20,7 @@
   background-clip: border-box;
   position: static;
 }
+
 .logo {
   margin: 30px;
   text-align: center;
@@ -28,13 +28,14 @@
   align-self: center;
   height: 150px;
 }
+
 .grid1 {
   display: grid;
-  grid-template: 1fr / 1.5fr 1fr;
-  width: 100%;
-  gap: 2px;
-  height: 100%;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 20px;
+  min-height: 1085px;
 }
+
 .H1 {
   margin-top: 270px;
   text-align: start;
@@ -46,9 +47,11 @@
   font-size: 4em;
   color: #e2eefd;
 }
+
 .footer-login {
   display: block;
 }
+
 .login-form-background {
   background-color: #ffffff;
   border: 1px solid #c0c9d1;
@@ -57,16 +60,20 @@
   justify-items: center;
   justify-content: center;
 }
+
 .login-side {
   margin-top: 100px;
   padding: 70px;
   align-self: center;
 }
+
 .getstarted {
   margin: 2px 2px 50px;
   padding: 1px;
   color: #000000;
 }
+
+/* Update other styles as necessary */
 
 .checkbox_forgotpassword {
   display: flex;

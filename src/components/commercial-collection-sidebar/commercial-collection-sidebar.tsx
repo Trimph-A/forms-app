@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import styles from './commercial-collection-sidebar.module.scss';
 import Nav from '../nav/nav';
@@ -5,13 +6,18 @@ import { Icon } from '../icon/icon';
 
 export interface CommercialCollectionSidebarProps {
     className?: string;
+    onSidebarItemClick: (item: 'collection' | 'commercial') => void;
 }
 
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
-export const CommercialCollectionSidebar = ({ className }: CommercialCollectionSidebarProps) => {
+export const CommercialCollectionSidebar = ({ className, onSidebarItemClick }: CommercialCollectionSidebarProps) => {
+    const [selectedItem, setSelectedItem] = useState<'collection' | 'commercial'>('collection');
+
+    const handleItemClick = (item: 'collection' | 'commercial') => {
+        console.log('Clicked item:', item);
+        setSelectedItem(item);
+        onSidebarItemClick(item);
+    };
+
     return (
         <div className={classNames(styles.root, className)}>
             <img
@@ -19,12 +25,12 @@ export const CommercialCollectionSidebar = ({ className }: CommercialCollectionS
                 className={styles['logo-commercial-sidebar']}
             />
             <Nav className={styles.nav}>
-                <Nav.Item selected>
+                <Nav.Item selected={selectedItem === 'collection'} onClick={() => handleItemClick('collection')}>
                     <Icon glyph="insights" aria-hidden />
                     Collection Forms
                 </Nav.Item>
 
-                <Nav.Item>
+                <Nav.Item selected={selectedItem === 'commercial'} onClick={() => handleItemClick('commercial')}>
                     <Icon glyph="draft" aria-hidden />
                     Commercial Forms
                 </Nav.Item>
