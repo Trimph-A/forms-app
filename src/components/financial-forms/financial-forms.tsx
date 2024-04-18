@@ -50,6 +50,9 @@ export const FinancialForms = ({ className }: FinancialFormsProps) => {
                         <Form.Input label="" placeholder="Technical" type="number" />
                         <Form.Input label="" placeholder="IT" type="number" />
                         <Form.Input label="" placeholder="Commercial" type="number" />
+                    </Form.Group>
+                    <Form.Group widths="equal" className={styles.selection}>
+                        <Form.Input label="" placeholder="Salary" type="number" />
                         <Form.Input label="" placeholder="Admin" type="number" />
                         <Form.Input label="" placeholder="Security" type="number" />
                     </Form.Group>
