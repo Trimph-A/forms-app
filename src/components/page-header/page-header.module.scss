@@ -20,6 +20,8 @@
     align-items: center;
     margin-top: $spacing-1;
     column-gap: $spacing-3;
+    align-content: center;
+    justify-items: center;
   }
 
   @media only screen and (max-width: #{$media-tablet}) {
@@ -32,6 +34,7 @@
   display: flex;
   column-gap: $spacing-0-5;
   align-items: center;
+  align-content: center;
 }
 
 .userSection {
