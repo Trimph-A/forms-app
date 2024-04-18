@@ -22,6 +22,7 @@
     column-gap: $spacing-3;
     align-content: center;
     justify-items: center;
+    align-self: center;
   }
 
   @media only screen and (max-width: #{$media-tablet}) {
