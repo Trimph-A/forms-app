@@ -2,15 +2,11 @@ import classNames from 'classnames';
 import styles from './financial-forms.module.scss';
 import { useState } from 'react';
 import { Form } from 'semantic-ui-react';
+import { DateInput } from 'semantic-ui-calendar-react';
 
 export interface FinancialFormsProps {
     className?: string;
 }
-
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
 
 const options = [
     { key: 'm', text: 'Kano', value: 'kano' },
@@ -18,31 +14,45 @@ const options = [
     { key: 'o', text: 'Jigawa', value: 'jigawa' },
 ];
 
-const options1 = [
-    { key: 'm', text: 'Kano', value: 'kano' },
-    { key: 'f', text: 'Katsina', value: 'katsina' },
-    { key: 'o', text: 'Jigawa', value: 'jigawa' },
-];
-
 export const FinancialForms = ({ className }: FinancialFormsProps) => {
-    const [selectedRadio1, setSelectedRadio1] = useState<string>();
+    const [selectedState, setSelectedState] = useState<string>('');
+    const [selectedDistrict, setSelectedDistrict] = useState<string>('');
+    const [selectedDate, setSelectedDate] = useState('');
 
-    const handleChange1 = (value: string) => setSelectedRadio1(value);
-    const [selectedRadio, setSelectedRadio] = useState<string>();
+    const handleStateChange = (event: any, data: any) => {
+        setSelectedState(data.value);
+        setSelectedDistrict(''); // Reset selected district when state changes
+    };
 
-    const handleChange = (value: string) => setSelectedRadio(value);
+    const handleDistrictChange = (event: any, data: any) => {
+        setSelectedDistrict(data.value);
+    };
 
     return (
         <div className={classNames(styles.root, className)}>
             <Form className={styles.form}>
                 <Form.Group widths="equal" className={styles.selection}>
-                    <Form.Select fluid label="STATE" options={options} placeholder="STATE" />
+                    <Form.Select fluid label="STATE" options={options} placeholder="STATE" onChange={handleStateChange} />
                     <Form.Select
                         fluid
                         label="Business District"
                         options={options}
                         placeholder="Business District"
+                        onChange={handleDistrictChange}
                     />
+                    <Form.Field>
+                        <label>Date</label>
+                        <DateInput
+                            name="date"
+                            placeholder="Select Date"
+                            value={selectedDate}
+                            iconPosition="left"
+                            onChange={(event, data) => setSelectedDate(data.value)}
+                            popupPosition="bottom center"
+                            minDate={new Date()}
+                            maxDate={new Date()}
+                        />
+                    </Form.Field>
                 </Form.Group>
                 <div className={styles['opex-inputs']}>
                     <h5 className={styles['load-reading-header']}>Input Monthly OPEX</h5>
