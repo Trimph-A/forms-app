@@ -325,7 +325,7 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
                                     value={hourlyData[hour]}
                                     onChange={(e) => handleChange(hour, e.target.value)}
                                     disabled={currentHour < hour}
-                                    
+                                    pattern="(?:tcn|ls|permit|fault|[0-9])*"
                                 />
                             ))}
                         </Form.Group>
