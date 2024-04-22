@@ -234,6 +234,30 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
         setSelectedDistrict(data.value);
     };
 
+    const [hourlyData, setHourlyData] = useState(Array.from({ length: 24 }, () => ''));
+    const [currentHour, setCurrentHour] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const now = new Date();
+            setCurrentHour(now.getHours());
+        }, 60000); // Update current hour every minute
+
+        return () => clearInterval(interval);
+    }, []);
+
+    const handleChange = (hour, value) => {
+        setHourlyData((prevData) => {
+            const newData = [...prevData];
+            newData[hour] = value;
+            return newData;
+        });
+    };
+
+    const handleSubmit = () => {
+        console.log(hourlyData);
+    };
+
     useEffect(() => {
         setSelectedDate(''); // Reset selected date when state or district changes
     }, [selectedState, selectedDistrict]);
@@ -285,132 +309,43 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
                 </Form.Group>
                 <div className={styles['Hourly-box']}>
                     <h5 className={styles['load-reading-header']}>Hourly Load Reading</h5>
+                    <h5 className={styles['subtitle-hourly']}>
+                        For Interruptions Input either of (&quot;ls&quot;, &quot;tcn&quot;,
+                        &quot;fault&quot; or &quot;permit&quot;) other types text wouldnt be
+                        accepted{' '}
+                    </h5>
                     <div className={classNames(styles.hourlyforms, styles.am)}>
                         <Form.Group className={styles.selection}>
-                            <Form.Input
-                                label=""
-                                placeholder="00:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="01:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="02:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="03:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="04:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="05:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="06:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="07:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="08:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="09:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="10:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="11:00"
-                                className={styles['hourly-input']}
-                            />
+                            {[...Array(12).keys()].map((hour) => (
+                                <Form.Input
+                                    key={hour}
+                                    label=""
+                                    placeholder={`${hour}:00`}
+                                    className={styles['hourly-input']}
+                                    value={hourlyData[hour]}
+                                    onChange={(e) => handleChange(hour, e.target.value)}
+                                    disabled={currentHour < hour}
+                                    type="text"
+                                    pattern="(?:tcn|ls|permit|fault|[0-9])*"
+                                />
+                            ))}
                         </Form.Group>
                     </div>
                     <div className={classNames(styles.hourlyforms, styles.pm)}>
                         <Form.Group className={styles.selection}>
-                            <Form.Input
-                                label=""
-                                placeholder="12:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="13:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="14:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="15:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="16:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="17:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="18:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="19:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="20:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="21:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="22:00"
-                                className={styles['hourly-input']}
-                            />
-                            <Form.Input
-                                label=""
-                                placeholder="23:00"
-                                className={styles['hourly-input']}
-                            />
+                            {[...Array(12).keys()].map((hour) => (
+                                <Form.Input
+                                    key={hour + 12}
+                                    label=""
+                                    placeholder={`${hour + 12}:00`}
+                                    className={styles['hourly-input']}
+                                    value={hourlyData[hour + 12]}
+                                    onChange={(e) => handleChange(hour + 12, e.target.value)}
+                                    disabled={currentHour < hour + 12}
+                                    type="text"
+                                    pattern="(?:tcn|ls|permit|fault|[0-9])*"
+                                />
+                            ))}
                         </Form.Group>
                     </div>
                 </div>
@@ -480,7 +415,11 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
                 </div>
                 <div className={styles['save-submit']}>
                     <button className={styles['save-button']}>Save Changes</button>
-                    <button className={styles['submit-button']} type="submit">
+                    <button
+                        className={styles['submit-button']}
+                        type="submit"
+                        onClick={handleSubmit}
+                    >
                         {' '}
                         Submit
                     </button>
