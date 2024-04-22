@@ -241,7 +241,7 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
         const interval = setInterval(() => {
             const now = new Date();
             setCurrentHour(now.getHours());
-        }, 60000); // Update current hour every minute
+        }, 1000); // Update current hour every minute
 
         return () => clearInterval(interval);
     }, []);
@@ -325,8 +325,7 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
                                     value={hourlyData[hour]}
                                     onChange={(e) => handleChange(hour, e.target.value)}
                                     disabled={currentHour < hour}
-                                    type="text"
-                                    pattern="(?:tcn|ls|permit|fault|[0-9])*"
+                                    
                                 />
                             ))}
                         </Form.Group>
