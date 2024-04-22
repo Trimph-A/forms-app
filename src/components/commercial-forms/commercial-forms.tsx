@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import styles from './commercial-forms.module.scss';
 import { useState } from 'react';
 import { Form } from 'semantic-ui-react';
+import { DateInput } from 'semantic-ui-calendar-react';
 import CollectionForms_module from '../collection-forms/collection-forms.module.scss';
 
 export interface CommercialFormsProps {
@@ -23,7 +24,11 @@ const options1 = [
 export const CommercialForms = ({ className }: CommercialFormsProps) => {
     const [selectedRadio, setSelectedRadio] = useState<string>();
 
-    const handleChange = (value: string) => setSelectedRadio(value);
+    const [selectedDate, setSelectedDate] = useState('');
+
+    const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSelectedDate(event.target.value);
+    };
     return (
         <div className={classNames(styles.root, className)}>
             <div className={CollectionForms_module['collectionforms-upperlay']}>
@@ -51,6 +56,18 @@ export const CommercialForms = ({ className }: CommercialFormsProps) => {
                                 options={options}
                                 placeholder="Feeders"
                             />
+                            <Form.Field>
+                                <label>Date</label>
+                                <DateInput
+                                    name="date"
+                                    placeholder="Select Date"
+                                    value={selectedDate}
+                                    onChange={(event, data) => setSelectedDate(data.value)}
+                                    popupPosition="bottom center"
+                                    minDate={new Date()}
+                                    maxDate={new Date()}
+                                />
+                            </Form.Field>
                         </Form.Group>
                         <div className={styles['opex-inputs']}>
                             <h5 className={styles['load-reading-header']}>Monthly Billing</h5>

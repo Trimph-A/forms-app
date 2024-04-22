@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import styles from './collection-forms.module.scss';
 import { useState } from 'react';
 import { Form } from 'semantic-ui-react';
+import { DateInput } from 'semantic-ui-calendar-react';
 
 export interface CollectionFormsProps {
     className?: string;
@@ -22,7 +23,13 @@ const options1 = [
 export const CollectionForms = ({ className }: CollectionFormsProps) => {
     const [selectedRadio, setSelectedRadio] = useState<string>();
 
-    const handleChange = (value: string) => setSelectedRadio(value);
+    const [selectedDate, setSelectedDate] = useState('');
+    const minDate = new Date();
+    minDate.setDate(minDate.getDate() - 2);
+
+    const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSelectedDate(event.target.value);
+    };
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['collectionforms-upperlay']}>
@@ -48,6 +55,18 @@ export const CollectionForms = ({ className }: CollectionFormsProps) => {
                                 options={options}
                                 placeholder="Feeders"
                             />
+                            <Form.Field>
+                                <label>Date</label>
+                                <DateInput
+                                    name="date"
+                                    placeholder="Select Date"
+                                    value={selectedDate}
+                                    onChange={(event, data) => setSelectedDate(data.value)}
+                                    popupPosition="bottom center"
+                                    minDate={minDate}
+                                    maxDate={new Date()}
+                                />
+                            </Form.Field>
                         </Form.Group>
                         <div className={styles['opex-inputs']}>
                             <h5 className={styles['load-reading-header']}>Collections</h5>
