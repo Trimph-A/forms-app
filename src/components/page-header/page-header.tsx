@@ -46,6 +46,9 @@ const PageHeader = ({ className, children }: PageHeaderProps) => {
                         <span className={styles.userAccountType}>Technical Staff</span>
                     </div>
                 </div>
+                <div>
+                    <button className={styles['log-out']}>Log Out</button>
+                </div>
             </div>
         </header>
     );
