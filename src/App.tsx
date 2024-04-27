@@ -4,7 +4,8 @@ import LoginPageBoard from './_codux/boards/login-page.board';
 import LandingPageBoard from './_codux/boards/landing-page.board'; 
 import DashboardLayout from './_codux/boards/dashboard-layout/dashboard-layout.board'; 
 import CollectionDashboardLayout from "./_codux/boards/collection-dashboard-1.board";
-import FinancialDashboardLayout from "./_codux/boards/financial-dashboard-layout/financial-dashboard-layout.board"
+import FinancialDashboardLayout from "./_codux/boards/financial-dashboard-layout/financial-dashboard-layout.board";
+import PageHeader from "./_codux/boards/page-header/page-header.board"
 function App() {
     return (
         <Router>

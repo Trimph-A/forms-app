@@ -9,19 +9,14 @@ export interface LoginPageProps {
 }
 
 const LoginPage = ({ className }: LoginPageProps) => {
-    // State variables for email and password
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    // Function to handle login
     const handleLogin = () => {
-        // Replace this with your actual login logic
-        // For example, you can send a request to your backend server to authenticate the user
-        // Simulating successful login for now
         if (email === 'fortune@test.com' && password === 'test') {
             console.log('Login successful!');
-            navigate('/landing'); // Navigate to the landing page
+            navigate('/landing'); 
         } else {
             console.log('Invalid email or password');
         }

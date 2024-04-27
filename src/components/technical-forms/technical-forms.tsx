@@ -3,7 +3,7 @@ import styles from './technical-forms.module.scss';
 import React, { useState, useEffect, Fragment } from 'react';
 import DatePicker from 'react-datepicker';
 import { Form, Header, Icon, Checkbox } from 'semantic-ui-react';
-import { DateInput } from 'semantic-ui-calendar-react';
+import { DateInput, DateTimeInput } from 'semantic-ui-calendar-react';
 
 export interface TechnicalFormsProps {
     className?: string;
@@ -193,10 +193,16 @@ const feeders: {
 };
 
 export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
-    const [faultReports, setFaultReports] = useState([{ occurrenceTime: '', resolveTime: '' }]);
+    const [faultReports, setFaultReports] = useState([
+        { occurrenceTime: '', resolveTime: '', date: '' },
+    ]);
+    const [faultsDate, setFaultsDate] = useState('');
 
     const handleAddFaultReport = () => {
-        setFaultReports([...faultReports, { occurrenceTime: '', resolveTime: '' }]);
+        setFaultReports([
+            ...faultReports,
+            { occurrenceTime: '', resolveTime: '', date: faultsDate },
+        ]);
     };
 
     const handleRemoveFaultReport = (indexToRemove) => {
@@ -216,6 +222,13 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
         updatedFaultReports[index].resolveTime = value;
         setFaultReports(updatedFaultReports);
     };
+
+    const handleFaultsDateChange = (index: number, value: string) => {
+        const updatedFaultReports = [...faultReports];
+        updatedFaultReports[index].date = value;
+        setFaultReports(updatedFaultReports);
+    };
+
     const [selectedDate, setSelectedDate] = useState('');
 
     const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -370,28 +383,30 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
                                 />
                                 <Form.Field className={styles['faults-time-picker']}>
                                     <label></label>
-                                    <Form.Input
-                                        type="time"
+                                    <DateTimeInput
+                                        name={`occurrenceTime-${index}`}
+                                        placeholder="Time Occurred"
                                         value={fault.occurrenceTime}
-                                        onChange={(e) =>
-                                            handleOccurrenceTimeChange(index, e.target.value)
+                                        onChange={(event, data) =>
+                                            handleOccurrenceTimeChange(index, data.value)
                                         }
-                                        placeholder="Time of Occurrence"
-                                        label="Time Occurred:"
-                                        inline
+                                        dateTimeFormat="DD-MM-YYYY  HH:mm"
+                                        closable={true}
+                                        minDate={new Date()}
                                     />
                                 </Form.Field>
                                 <Form.Field className={styles['faults-time-picker']}>
                                     <label></label>
-                                    <Form.Input
-                                        type="time"
+                                    <DateTimeInput
+                                        name={`resolveTime-${index}`}
+                                        placeholder="Time Resolved"
                                         value={fault.resolveTime}
-                                        onChange={(e) =>
-                                            handleResolveTimeChange(index, e.target.value)
+                                        onChange={(event, data) =>
+                                            handleResolveTimeChange(index, data.value)
                                         }
-                                        placeholder="Time of Resolve"
-                                        label="Time Resolved:"
-                                        inline
+                                        dateTimeFormat="DD-MM-YYYY  HH:mm"
+                                        closable={true}
+                                        minDate={new Date()}
                                     />
                                 </Form.Field>
                                 <button

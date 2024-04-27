@@ -88,7 +88,6 @@ export const CollectionForms = ({ className }: CollectionFormsProps) => {
                             <input type="file" className={styles['upload-excel']} />
                         </div>
                         <div className={styles['collections-save-submit']}>
-                            <button className={styles['save-collection']}>Save Changes</button>
                             <button type="submit" className={styles['submit-collection']}>
                                 {' '}
                                 Submit

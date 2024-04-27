@@ -100,9 +100,7 @@ export const CommercialForms = ({ className }: CommercialFormsProps) => {
                             <input type="file" className={styles['upload-excel']} />
                         </div>
                         <div className={styles['save-submit-commercial']}>
-                            <button className={styles['save-button-commercial']}>
-                                Save Changes
-                            </button>
+                            
                             <button type="submit" className={styles['submit-button-commercial']}>
                                 {' '}
                                 Submit

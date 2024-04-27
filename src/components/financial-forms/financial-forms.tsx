@@ -68,7 +68,6 @@ export const FinancialForms = ({ className }: FinancialFormsProps) => {
                     </Form.Group>
                 </div>
                 <div className={styles['save-submit-financial']}>
-                    <button className={styles['save-button-financial']}>Save Changes</button>
                     <button type="submit" className={styles['submit-financial']}>
                         {' '}
                         Submit
