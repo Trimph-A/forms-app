@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import styles from './technical-forms.module.scss';
 import React, { useState, useEffect, Fragment } from 'react';
 import DatePicker from 'react-datepicker';
-import { Form, Header, Icon, Checkbox } from 'semantic-ui-react';
+import { Form, Header, Icon, Checkbox, Label } from 'semantic-ui-react';
 import { DateInput, DateTimeInput } from 'semantic-ui-calendar-react';
 
 export interface TechnicalFormsProps {
@@ -10,13 +10,13 @@ export interface TechnicalFormsProps {
 }
 
 const faultOptions = [
-    { key: '1', text: 'Load Shedding (l/s)', value: 'load_shedding' },
-    { key: '2', text: 'Earth Fault (e/f)', value: 'earth_fault' },
-    { key: '3', text: 'Over Current (o/c)', value: 'over_current' },
+    { key: '1', text: 'Load Shedding (ls)', value: 'load_shedding' },
+    { key: '2', text: 'Earth Fault (fault)', value: 'earth_fault' },
+    { key: '3', text: 'Over Current (fault)', value: 'over_current' },
     { key: '4', text: 'Instantaneous Current', value: 'instantaneous_current' },
     { key: '5', text: 'DT Fault (Permit)', value: 'dt_fault_permit' },
     { key: '6', text: 'Installation (Permit)', value: 'intallation_permit' },
-    { key: '7', text: 'TCN', value: 'tcn' },
+    { key: '7', text: 'TCN (tcn)', value: 'tcn' },
 ];
 
 const states = [
@@ -275,6 +275,11 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
         setSelectedDate(''); // Reset selected date when state or district changes
     }, [selectedState, selectedDistrict]);
 
+    const handleCopyClick = (text: string) => {
+        navigator.clipboard.writeText(text);
+        alert(`Copied "${text}" to clipboard`);
+    };
+
     return (
         <div className={classNames(styles.root, className)}>
             <Form className={styles.form}>
@@ -326,7 +331,45 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
                         For Interruptions Input either of (&quot;ls&quot;, &quot;tcn&quot;,
                         &quot;fault&quot; or &quot;permit&quot;) other types text wouldnt be
                         accepted{' '}
+                        <div className={styles.copies}>
+                            <Label
+                                as="a"
+                                color="blue"
+                                className={styles['copy-label']}
+                                onClick={() => handleCopyClick('ls')}
+                            >
+                                ls <Icon name="copy" />
+                            </Label>
+
+                            <Label
+                                as="a"
+                                color="blue"
+                                className={styles['copy-label']}
+                                onClick={() => handleCopyClick('tcn')}
+                            >
+                                tcn <Icon name="copy" />
+                            </Label>
+
+                            <Label
+                                as="a"
+                                color="blue"
+                                className={styles['copy-label']}
+                                onClick={() => handleCopyClick('fault')}
+                            >
+                                fault <Icon name="copy" />
+                            </Label>
+
+                            <Label
+                                as="a"
+                                color="blue"
+                                className={styles['copy-label']}
+                                onClick={() => handleCopyClick('permit')}
+                            >
+                                permit <Icon name="copy" />
+                            </Label>
+                        </div>
                     </h5>
+
                     <div className={classNames(styles.hourlyforms, styles.am)}>
                         <Form.Group className={styles.selection}>
                             {[...Array(12).keys()].map((hour) => (
@@ -423,7 +466,10 @@ export const TechnicalForms = ({ className }: TechnicalFormsProps) => {
                     </button>
                 </div>
                 <div className={styles['energy-reading']}>
-                    <h5 className={styles['load-reading-header']}>Energy Reading</h5>
+                    <h5 className={styles['load-reading-header']}>
+                        Energy Reading
+                        <h5 className={styles['subtitle-hourly']}>Input this data after 23:00</h5>
+                    </h5>
 
                     <Form.Input label="" placeholder="Energy Reading" type="number" />
                 </div>

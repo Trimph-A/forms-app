@@ -30,6 +30,8 @@
 .load-reading-header {
   text-align: start;
   font-size: 1.1rem;
+  display: flex;
+  gap: 15px;
 }
 .Hourly-box {
   margin-top: 50px;
@@ -169,4 +171,20 @@
   color: #93989e;
   text-align: start;
   font-style: italic;
+  display: flex;
+  align-items: center;
+}
+.copy-button {
+  padding: 0.3em;
+  margin-left: 10px;
+  background-color: #0054b3;
+  font-family:
+    Trebuchet MS,
+    sans-serif;
+  font-weight: 700;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.copies {
+  margin-left: 20px;
 }
