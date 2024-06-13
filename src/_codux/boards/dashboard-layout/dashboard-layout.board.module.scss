@@ -27,7 +27,7 @@
   width: 100%;
 }
 .lay {
-  width: 1460px;
+  //width: 1460px;
   background-color: $color-white;
   padding: 20px;
   border: 1px solid $color-gray;
@@ -51,4 +51,11 @@
 }
 .divider-header {
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .lay {
+    width: auto;
+  }
+
 }

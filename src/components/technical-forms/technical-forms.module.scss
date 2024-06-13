@@ -1,9 +1,6 @@
 .root {
 }
-.form {
-  width: 100%;
-  display: block;
-}
+
 .selection {
   width: 100%;
   align-items: center;
@@ -49,13 +46,16 @@
   margin: 50px 0px 30px;
 }
 .faults-select {
+  width: auto;
 }
 .faults-dropdown {
+  width: auto;
 }
 .faults {
   margin-top: 40px;
 }
 .faults-time-picker {
+  width: auto;
 }
 .energy-reading {
   margin-bottom: 20px;
@@ -187,4 +187,69 @@
 }
 .copies {
   margin-left: 20px;
+}
+
+ .ui.form .field .ui.input input, .ui.form .fields .field .ui.input input {
+ width: inherit !important;
+ gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .subtitle-hourly {
+    color: #93989e;
+    text-align: justify;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .copies {
+    margin-left: 0px;
+    display: flex;
+  }
+  .hourly-input {
+    width: auto;
+  }
+
+  .ui.icon.input>input {
+    padding-right: 0em !important;
+  }
+  
+  .save-button{
+    padding: 0.5em;
+  }
+  .submit-button {
+    padding: 0.5em;
+  }
+
+  .faults-select{
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+
+  .add-fault {
+    font-weight: 900;
+    color: #000000;
+    background-color: #c5c5c575;
+    padding: 10px;
+    font-size: 1.5rem;
+    border-radius: 50px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100px;
+    justify-items: center;
+    margin-top: 25px;
+    margin-left: 0px;
+    margin-bottom: 30px;
+  }
+
+}
+
+@media (max-width: 350px) {
+
 }

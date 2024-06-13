@@ -19,3 +19,15 @@
   border-right: 0px solid #e2e2e2;
   border-bottom: 0px solid #e2e2e2;
 }
+
+@media (max-width: 768px) {
+  .root {
+    display: block;
+  }
+  .financial-page-content {
+    padding-top: 0rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem
+  }
+}

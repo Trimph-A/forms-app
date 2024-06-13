@@ -8,22 +8,24 @@ import { Breadcrumb, Divider } from 'semantic-ui-react';
 export default createBoard({
     name: '🧩 Dashboard Layout',
     Board: () => (
-        <DashboardLayout className={styles['dashboard-layout']}>
-            <div>
-                <PageHeader>
-                    <div />
-                </PageHeader>
-            </div>
-            <div style={{ width: '100%' }}>
-                <Divider className={styles['divider-header']} />
-            </div>
-            <div className={styles.upperlay}>
-                <h3 className={styles.header}>Technical Data Entry</h3>
-                <div className={styles.lay}>
-                    <TechnicalForms />
+        <div>
+            <DashboardLayout>
+                <div>
+                    <PageHeader>
+                        <div />
+                    </PageHeader>
                 </div>
-            </div>
-        </DashboardLayout>
+                <div style={{ width: '100%' }}>
+                    <Divider className={styles['divider-header']} />
+                </div>
+                <div className={styles.upperlay}>
+                    <h3 className={styles.header}>Technical Data Entry</h3>
+                    <div className={styles.lay}>
+                        <TechnicalForms />
+                    </div>
+                </div>
+            </DashboardLayout>
+        </div>
     ),
     environmentProps: {
         canvasMargin: {

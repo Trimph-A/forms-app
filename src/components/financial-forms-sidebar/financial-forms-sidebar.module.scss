@@ -8,6 +8,16 @@
   justify-content: center;
   row-gap: 80px;
   padding: 4em 5em;
+  @media (max-width: 768px) {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    display: none; // Hide sidebar by default on mobile
+  }
+
+  &.show {
+    display: flex; // Show sidebar when toggled
+  }
 }
 .logo-fsidebar {
   width: 140px;
@@ -17,14 +27,70 @@
   align-items: start;
   align-content: center;
   justify-content: start;
+  @media (max-width: 768px) {
+    width: 100px;
+    display: none;
+  }
+
+  @media (max-width: 480px) {
+    width: 80px;
+  }
 }
 .footer-fsidebar {
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 .footer-img-fsidebar {
   width: 140px;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 .powered-by-fsidebar {
   color: #000000;
   font-size: 1rem;
   text-align: center;
+ 
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.nav-item {
+  flex: 1;
+}
+
+.hamburger {
+  display: none; // Hide hamburger menu on larger screens
+
+  @media (max-width: 768px) {
+    display: block;
+    cursor: pointer;
+    padding: 1em;
+    padding-left: 2rem;
+  }
+}
+
+.hamburger-icon {
+  width: 25px;
+  height: 3px;
+  background-color: #1b1c1d;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.hamburger:hover .hamburger-icon {
+  background-color: #555;
 }
