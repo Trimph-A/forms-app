@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import styles from './collection-forms.module.scss';
 import { useState } from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, Dropdown, Icon } from 'semantic-ui-react';
 import { DateInput } from 'semantic-ui-calendar-react';
 
 export interface CollectionFormsProps {
@@ -180,6 +180,22 @@ const feeders: {
     },
 };
 
+const initialCollection = {
+    collectionAgent: '',
+    revenueCollected: '',
+    customerResponseNumber: '',
+};
+
+const collectionAgents = [
+    { key: 'banahim', value: 'banahim', text: 'Banahim.net' },
+    { key: 'bank', value: 'bank', text: 'Bank' },
+    { key: 'buypower', value: 'buypower', text: 'BuyPower.ng' },
+    { key: 'cash', value: 'cash', text: 'Cash' },
+    { key: 'pos', value: 'pos', text: 'POS' },
+    { key: 'powershop', value: 'powershop', text: 'powershop.ng' },
+    { key: 'remita', value: 'remita', text: 'Remita' },
+];
+
 export const CollectionForms = ({ className }: CollectionFormsProps) => {
     const [selectedState, setSelectedState] = useState<string>('');
     const [selectedDistrict, setSelectedDistrict] = useState<string>('');
@@ -201,6 +217,24 @@ export const CollectionForms = ({ className }: CollectionFormsProps) => {
         setSelectedDate(event.target.value);
     };
 
+
+    const [collections, setCollections] = useState([initialCollection]);
+
+    const handleCollectionChange = (index: number, field: string, value: any) => {
+        const newCollections = [...collections];
+        newCollections[index] = { ...newCollections[index], [field]: value };
+        setCollections(newCollections);
+    };
+
+    const addCollection = () => {
+        setCollections([...collections, initialCollection]);
+    };
+
+    const removeCollection = (index: number) => {
+        const newCollections = collections.filter((_, i) => i !== index);
+        setCollections(newCollections);
+    };
+
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles['collectionforms-upperlay']}>
@@ -219,9 +253,7 @@ export const CollectionForms = ({ className }: CollectionFormsProps) => {
                             <Form.Select
                                 fluid
                                 label="Business District"
-                                options={
-                                    selectedState ? businessDistricts[selectedState] : []
-                                }
+                                options={selectedState ? businessDistricts[selectedState] : []}
                                 placeholder="Business District"
                                 value={selectedDistrict}
                                 onChange={handleDistrictChange}
@@ -251,21 +283,53 @@ export const CollectionForms = ({ className }: CollectionFormsProps) => {
                                 />
                             </Form.Field>
                         </Form.Group>
-                        <div className={styles['opex-inputs']}>
-                            <h5 className={styles['load-reading-header']}>Collections</h5>
-                            <Form.Group widths="equal" className={styles.selection}>
-                                <Form.Input
-                                    label=""
-                                    placeholder="Revenue Collected"
-                                    type="number"
-                                />
-                                <Form.Input
-                                    label=""
-                                    placeholder="Customer Response Number"
-                                    type="number"
-                                />
-                            </Form.Group>
-                        </div>
+                    <div  className={styles['opex-inputs']}>
+                        <h5 className={styles['load-reading-header']}>Collections</h5>
+                        {collections.map((collection, index) => (
+                        <Form.Group widths="equal" key={index} className={styles.selection}>
+                            <Dropdown
+                                placeholder="Collection Agent"
+                                search
+                                selection
+                                options={collectionAgents}
+                                className={styles.collectionagent}
+                                value={collection.collectionAgent}
+                                onChange={(event, data) =>
+                                    handleCollectionChange(index, 'collectionAgent', data.value)
+                                }
+                            />
+                            <Form.Input
+                                label=""
+                                placeholder="Revenue Collected"
+                                type="number"
+                                value={collection.revenueCollected}
+                                onChange={(event) =>
+                                    handleCollectionChange(index, 'revenueCollected', event.target.value)
+                                }
+                            />
+                            <Form.Input
+                                label=""
+                                placeholder="Customer Response Number"
+                                type="number"
+                                value={collection.customerResponseNumber}
+                                onChange={(event) =>
+                                    handleCollectionChange(index, 'customerResponseNumber', event.target.value)
+                                }
+                            />
+                            <button
+                                
+                                type="button"
+                                className={styles['remove-collection']}
+                                onClick={() => removeCollection(index)}
+                            >
+                                <Icon name="trash" />
+                            </button>
+                        </Form.Group>
+                        ))}
+                    </div>
+                <button className={styles['add-collection']} onClick={addCollection}>
+                    +
+                </button>
                         <div className={styles['excel-upload']}>
                             <h5 className={styles['load-reading-header']}>Upload File</h5>
                             <input type="file" className={styles['upload-excel']} />

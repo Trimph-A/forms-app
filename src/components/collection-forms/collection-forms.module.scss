@@ -43,3 +43,48 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+.collectionagent {
+  padding: 10px;
+  margin-left: 10px;
+  min-height: auto;
+  display: flex;
+}
+.add-collection {
+  font-weight: 900;
+  color: #ffffff;
+  background-color: #0054b3;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 50px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100px;
+  justify-items: center;
+  margin-top: 2px;
+  margin-left: 0px;
+  margin-bottom: 30px;
+}
+.remove-collection {
+  font-weight: 700;
+  color: #ffffff;
+  height: 30px;
+  background-color: #db2828;
+  padding: 10px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  align-self: center;
+  width: 100px;
+  justify-items: center;
+  margin-top: 2px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  font-family:
+    Trebuchet MS,
+    sans-serif;
+}
